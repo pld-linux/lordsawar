@@ -1,0 +1,13 @@
+--- lordsawar-0.1.9/dat/lordsawar.desktop~	2009-11-29 20:09:32.000000000 +0100
++++ lordsawar-0.1.9/dat/lordsawar.desktop	2010-07-13 16:37:45.078908550 +0200
+@@ -2,7 +2,9 @@
+ 
+ Name=LordsAWar
+ GenericName=Turn-based strategy game
+-Comment=Play a clone of Warlords II
++GenericName[pl]=Turowa gra strategiczna
++Comment=A clone of Warlords II
++Comment[pl]=Klon gry Warlords II
+ 
+ Type=Application
+ Exec=lordsawar
