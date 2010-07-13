@@ -1,0 +1,10 @@
+--- lordsawar-0.1.9/configure.ac~	2010-07-06 17:07:15.000000000 +0200
++++ lordsawar-0.1.9/configure.ac	2010-07-13 14:27:13.976669554 +0200
+@@ -265,7 +265,6 @@
+ rm -f src/main.o
+ 
+ LORDSAWAR_DATADIR="$datadir/lordsawar"
+-LORDSAWAR_DATADIR=${LORDSAWAR_DATADIR/'${prefix}'/$prefix}
+ AC_SUBST(LORDSAWAR_DATADIR)
+ 
+ AC_CONFIG_FILES([
