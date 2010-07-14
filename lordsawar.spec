@@ -11,15 +11,19 @@ Source1:	%{name}.png
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.nongnu.org/lordsawar/
-BuildRequires:	SDL-devel
+BuildRequires:	SDL_mixer-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	boost-devel
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel
 BuildRequires:	glibmm-devel >= 2.4
 BuildRequires:	gnet-devel >= 2.0
 BuildRequires:	gtkmm-devel >= 2.4
+BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libtar-devel
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
