@@ -1,12 +1,13 @@
+%define		_pre	pre1
 Summary:	Turn-based strategy game
 Summary(pl.UTF-8):	Turowa gra strategiczna
 Name:		lordsawar
-Version:	0.1.9
+Version:	0.2.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://download.savannah.gnu.org/releases-noredirect/lordsawar/%{name}-%{version}.tar.gz
-# Source0-md5:	f6e6b6c05c4494b5029402eb0e5535e0
+Source0:	http://download.savannah.gnu.org/releases-noredirect/lordsawar/%{name}-%{version}-%{_pre}.tar.gz
+# Source0-md5:	ebc51978f71817cca948f439d74cf3e9
 Source1:	%{name}.png
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-desktop.patch
@@ -46,7 +47,7 @@ pobliskie ruiny. W grze istnieje możliwość gry z innymi żywymi
 graczami lub przeciwko komputerowi.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_pre}
 %patch0 -p1
 %patch1 -p1
 
