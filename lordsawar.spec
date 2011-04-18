@@ -1,12 +1,13 @@
+%define		_pre	pre3
 Summary:	Turn-based strategy game
 Summary(pl.UTF-8):	Turowa gra strategiczna
 Name:		lordsawar
-Version:	0.2.0
-Release:	1
+Version:	0.2.1
+Release:	0.%{_pre}.1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://download.savannah.gnu.org/releases-noredirect/lordsawar/%{name}-%{version}.tar.gz
-# Source0-md5:	06772b3fe86fd5af6d54fd6474b77487
+Source0:	http://download.savannah.gnu.org/releases-noredirect/lordsawar/%{name}-%{version}-%{_pre}.tar.gz
+# Source0-md5:	ac6e0e79c9acbe87789698ce1a6624f5
 Patch0:		%{name}-link.patch
 URL:		http://www.nongnu.org/lordsawar/
 BuildRequires:	SDL_mixer-devel
@@ -23,6 +24,7 @@ BuildRequires:	libtar-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,7 +46,7 @@ pobliskie ruiny. W grze istnieje możliwość gry z innymi żywymi
 graczami lub przeciwko komputerowi.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_pre}
 %patch0 -p1
 
 %build
@@ -98,6 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/various/editor/*.png
 %dir %{_datadir}/%{name}/various/items
 %{_datadir}/%{name}/various/items/*.xml
+%dir %{_datadir}/%{name}/various/xslt
+%{_datadir}/lordsawar/various/xslt/*.xsl
 %{_desktopdir}/lordsawar.desktop
 %{_iconsdir}/hicolor/32x32/apps/lordsawar.png
 %{_iconsdir}/hicolor/64x64/apps/lordsawar.png
