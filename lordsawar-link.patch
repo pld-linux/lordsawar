@@ -1,0 +1,11 @@
+--- lordsawar-0.2.0/configure.ac~	2011-03-16 01:25:59.000000000 +0100
++++ lordsawar-0.2.0/configure.ac	2011-04-18 12:03:46.450453917 +0200
+@@ -140,6 +140,8 @@
+               ,flrc=false
+              )
+ 
++LIBS="$LIBS -lz `pkg-config giomm-2.4 --libs`"
++
+ AM_CONDITIONAL(FL_RESRC, test x$flrc = xtrue)
+ 
+ dnl Now check gettext.h
