@@ -4,7 +4,7 @@
                ,flrc=false
               )
  
-+LIBS="$LIBS -lz `pkg-config giomm-2.4 --libs`"
++LIBS="$LIBS `pkg-config giomm-2.4 --libs` `pkg-config cairomm-1.0 --libs` -lxml2 -lxslt"
 +
  AM_CONDITIONAL(FL_RESRC, test x$flrc = xtrue)
  
