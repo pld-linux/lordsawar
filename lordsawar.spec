@@ -1,15 +1,13 @@
 Summary:	Turn-based strategy game
 Summary(pl.UTF-8):	Turowa gra strategiczna
 Name:		lordsawar
-Version:	0.1.9
+Version:	0.2.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	http://download.savannah.gnu.org/releases-noredirect/lordsawar/%{name}-%{version}.tar.gz
-# Source0-md5:	f6e6b6c05c4494b5029402eb0e5535e0
-Source1:	%{name}.png
-Patch0:		%{name}-configure.patch
-Patch1:		%{name}-desktop.patch
+# Source0-md5:	06772b3fe86fd5af6d54fd6474b77487
+Patch0:		%{name}-link.patch
 URL:		http://www.nongnu.org/lordsawar/
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	autoconf
@@ -40,15 +38,14 @@ LordsAWar! jest darmową, turową grą strategiczną, w której maksymalnie
 do 8 graczy usiłuje zdobyć jak najwięcej miast. Gracze budują nowe
 armie w zdobytch już miastach, aby zdobywać kolejne miasta. Miasta
 przynoszą zysk, który wykorzystywany jest do budowy nowych armii,
-które z służą z kolei do zajęcia większej ilości miast. Wysyłając
-bohatera do świątyni, otrzymuje się zadania, można też zwiedzać
+które służą z kolei do zajmowania większej liczby miast. Wysyłając
+bohatera do świątyni otrzymuje się zadania, można też zwiedzać
 pobliskie ruiny. W grze istnieje możliwość gry z innymi żywymi
 graczami lub przeciwko komputerowi.
 
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal} -I m4
@@ -63,8 +60,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %find_lang %{name} --all-name
 
@@ -104,4 +99,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/various/items
 %{_datadir}/%{name}/various/items/*.xml
 %{_desktopdir}/lordsawar.desktop
-%{_pixmapsdir}/lordsawar.png
+%{_iconsdir}/hicolor/32x32/apps/lordsawar.png
+%{_iconsdir}/hicolor/64x64/apps/lordsawar.png
