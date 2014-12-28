@@ -13,7 +13,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	boost-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel
 BuildRequires:	glibmm-devel >= 2.4
 BuildRequires:	gnet-devel >= 2.0
